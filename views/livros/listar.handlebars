@@ -1,0 +1,28 @@
+<h1 class="text-center my-3">Lista de Livros</h1>
+<table class="table">
+ <div class="row">
+ <div class="col-12">
+ <thead>
+ </thead>
+ <tbody>
+ <tr>
+    {{#each livro}}
+ <th><center><img src="{{this.link}}" alt="mostrar imagem" width=150
+height=150><br>
+ <strong>{{this.titulo}}</strong><br>
+ {{this.autor}} <br>
+ R${{this.preco}} <br>
+ cod. Livro:{{this.id_livro}}<br>
+ <a href="/carrinho/Adicionar/{{this.id_livro}}/{{this.titulo}}"><img src="https://cdn-icons-png.flaticon.com/512/5234/5234583.png" width=20 height=20
+alt="mostrar imagem" title="Clique para adicionar ao carrinho"/></a>
+ </th>
+ <form class="borde-0 m-0" action="/carrinho/Adicionar" method="POST">
+ <input type="hidden" name="id_livro" value={{this.id_livro}}>
+ </form>
+    {{/each}}
+ </tr>
+
+ </tbody>
+ </div>
+ </div>
+</table>
